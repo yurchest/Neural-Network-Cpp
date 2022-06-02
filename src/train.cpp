@@ -56,7 +56,6 @@ int main(int argc, char **argv) {
   ifstream configFile(argv[1]);
   string str((std::istreambuf_iterator<char>(configFile)),
               std::istreambuf_iterator<char>());
-
   NeuralNetwork *n  = new NeuralNetwork(buildConfig(json::parse(str)));
 
   vector< vector<double> > trainingData = utils::Misc::fetchData(n->config.trainingFile);
